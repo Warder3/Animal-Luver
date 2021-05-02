@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+body {
+    margin: 0px;
+}
+header {
+    background-color: #F5DEB3; 
+    display: flex;
+    justify-content: space-between;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+li {
+    float: right;
+    padding: 30px ;
+}
+.logo {
+    padding: 25px 5% 15px;
+    font-family: "Montserrat";
+    font-size: 30px;
+    font-weight: bold;
+    color: #5287A7;
+}
+a.logo:hover {
+    color:#87ACC1;
+}
+#links {
+    font-family: "Open Sans";
+    font-size: 15px;
+    color: #4F4846;
+}
+li a:hover {
+    color: white;
+}
+
+.hero-container {
+    background-color:#fff5d7;
+    display: flex;
+}
+.hero-text-big {
+    font-family: "Lora";
+    font-size: 80px;
+    font-weight: bold;
+    color: #A28089;
+}

@@ -147,10 +147,26 @@ const animal_list = {
     127 : "Zebra" 
 }
 
-function set_image(animal) {
-    panda.style.animationPlayState = "paused";
+// These set the images and fixes the animation 
+function set_animal(animal) {
+    card.classList.add('flipped');
+    panda.style.animationIterationCount = "1";
     picture.src = `images/${animal}.jpg`;
     card.style.transform = "rotateY(180deg)";
+}
+function set_panda(animal) {
+    card.classList.remove('flipped');
+    panda.src = `images/${animal}.jpg`;
+    card.style.transform = "rotateY(0deg)";
+}
+function image_set(animal) {
+    if (card.classList.contains('flipped')) {
+        set_panda(animal);
+    }
+    else {
+        set_animal(animal);
+    }
+
 }
 
 function get_animal(randInt) {
@@ -167,7 +183,7 @@ button.addEventListener('click', function() {
     let randInt = Math.floor(Math.random() * 11);
     let animal = get_animal(randInt);
 
-    set_image(animal);
+    image_set(animal);
     output.innerHTML = `Your chosen animal is the <span>${animal}</span>. They call upon you for help. Click the link down below to help.<br></br><a href="${get_url(randInt)}" target="_blank">${get_url(randInt)}</a>`
 })
 

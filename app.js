@@ -1,6 +1,9 @@
 const button = document.querySelector('.button');
-const animal = document.querySelector('.animal');
 const output = document.querySelector('#output');
+const picture = document.querySelector('.animal');
+const panda = document.querySelector('.panda');
+const card = document.querySelector('.card')
+const front = document.querySelector('.front');
 
 // List of animals to donate to
 const animal_list = {
@@ -144,6 +147,12 @@ const animal_list = {
     127 : "Zebra" 
 }
 
+function set_image(animal) {
+    panda.style.animationPlayState = "paused";
+    picture.src = `images/${animal}.jpg`;
+    card.style.transform = "rotateY(180deg)";
+}
+
 function get_animal(randInt) {
     return animal_list[randInt];
 }
@@ -154,7 +163,11 @@ function get_url(randInt) {
 
 button.addEventListener('click', function() {
     // These two functions both use the same random number to return a url and animal name
-    let randInt = Math.floor(Math.random()*Object.keys(animal_list).length);
+    //let randInt = Math.floor(Math.random()*Object.keys(animal_list).length);
+    let randInt = Math.floor(Math.random() * 11);
+    let animal = get_animal(randInt);
 
-    output.textContent = `Your chosen animal is the ${get_animal(randInt)}. They call upon you for help. Click this link ${get_url(randInt)}`
+    set_image(animal);
+    output.innerHTML = `Your chosen animal is the <span>${animal}</span>. They call upon you for help. Click the link down below to help.<br></br><a href="${get_url(randInt)}" target="_blank">${get_url(randInt)}</a>`
 })
+

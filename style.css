@@ -94,9 +94,6 @@ li a:hover {
     transition: transform 1s ease-in; 
     position: absolute;
 }
-.card-container:hover .card {
-    transform: rotateY(180deg);
-}
 .front {
     transform: translateZ(1px);
 }
@@ -140,4 +137,12 @@ li a:hover {
     padding-top: 10px;
     padding-right: 15px;
     font-family: Georgia;
+}
+#output span {
+    color: yellow;
+}
+#output a {
+    color: #ADD8E6;
+    text-decoration: underline;
+    font-weight: bold;
 }

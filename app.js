@@ -179,8 +179,7 @@ function get_url(randInt) {
 
 button.addEventListener('click', function() {
     // These two functions both use the same random number to return a url and animal name
-    //let randInt = Math.floor(Math.random()*Object.keys(animal_list).length);
-    let randInt = Math.floor(Math.random() * 51);
+    let randInt = Math.floor(Math.random()*Object.keys(animal_list).length);
     let animal = get_animal(randInt);
 
     image_set(animal);
